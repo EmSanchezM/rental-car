@@ -4,7 +4,7 @@ use crate::presentation::handlers::user_handler::{get_by_email_handler, register
 
 pub fn routes(config: & mut web::ServiceConfig) {
     config.service(
-        web::scope("api/v1/users")
+        web::scope("/api/v1/users")
             .service(register_user_handler)
             .service(get_by_email_handler)
     );
