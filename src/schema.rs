@@ -22,7 +22,6 @@ diesel::table! {
         arrival_time -> Nullable<Timestamp>,
         accommodation_date -> Nullable<Timestamp>,
         return_date -> Nullable<Timestamp>,
-        capacity -> Int4,
         created_at -> Timestamp,
         updated_at -> Timestamp,
     }
