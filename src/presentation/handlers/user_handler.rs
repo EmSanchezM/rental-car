@@ -1,21 +1,9 @@
 use actix_web::{get, post, web, HttpResponse};
-use diesel::Insertable;
-use serde::Deserialize;
 use log::error;
 
-use crate::schema::users;
+use crate::presentation::dtos::users_dto::NewUser;
 
 use crate::{application::use_cases::{get_user::GetUserUseCase, register_user::RegisterUserUseCase}, infrastructure::repositories::postgres_user_repository::PostgresUserRepository};
-
-#[derive(Debug, Clone, Deserialize, Insertable)]
-#[diesel(table_name = users)]
-pub struct NewUser {
-    pub first_name: String,
-    pub last_name: String,
-    pub email: String,
-    pub phone_number: String,
-    pub address: String
-}
 
 #[post("/")]
 pub async fn register_user_handler(repo: web::Data<PostgresUserRepository>, input: web::Json<NewUser>) -> HttpResponse {
