@@ -6,7 +6,7 @@ use diesel::{ExpressionMethods, OptionalExtension, QueryDsl, RunQueryDsl };
 use crate::domain::entities::user::User;
 use crate::domain::repositories::user_repository::UserRepository;
 use crate::infrastructure::database::connection::{DBPool, establish_connection};
-use crate::presentation::handlers::user_handler::NewUser;
+use crate::presentation::dtos::users_dto::NewUser;
 
 use crate::schema;
 use crate::schema::users::dsl::users;

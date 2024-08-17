@@ -1,4 +1,4 @@
-use crate::presentation::handlers::user_handler::NewUser;
+use crate::presentation::dtos::users_dto::NewUser;
 use crate::domain::repositories::user_repository::UserRepository;
 use crate::domain::entities::user::User;
 
